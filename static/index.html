@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<!--done part1-->
+<html>
+
+<head>
+  <title>Rate My Professor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="images/ratemyProf.jpg">
+  <link rel="stylesheet" type="text/css" href="styles/main.css">
+  <!--link to the font family-->
+  <!--<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet"> -->
+  <link href="https://fonts.googleapis.com/css?family=Butcherman|Source+Sans+Pro&display=swap" rel="stylesheet">
+
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+    integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script type="text/javascript" src="scripts/rateprofessor.js"></script>
+    <script type="text/javascript">
+        // This is a jQuery convention to say that once all the files
+        // load, the function RateProfessor.start() should run.
+        // This function is defined in the rateprofessor.js
+        $(function () {
+            RateProfessor().start();
+        });
+    </script>
+
+
+</head>
+
+<body>
+  <header>
+    <!-- FINISH ME: Task 2-->
+    <div class = "header_row">
+    	<div class = wsu_logo_col>
+    		<img class = "wsu_logo" src="images/wsu_shield.png">
+    	</div>
+    	<div class = selected_prof>
+    		<div class = "selected_name">
+    			Professor Name
+    		</div>
+    		<div class = "selected_title">
+    			Professor Title
+    		</div>
+    		<div class = "selected_school">
+    			Washington State University, Pullman
+    		</div>
+    		
+    	</div>
+    	<div class = logo_col>
+    		<img class = "logo" src="images/ratemyProf.jpg">
+    	</div>
+    	
+    </div>
+
+  </header>
+
+
+  <div class="mytab">
+
+    <div class="tab" role="tabpanel">
+      <!-- required for floating -->
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li class="tab1 active"> <a href="#list" role="tab" data-toggle="tab"> <img src="images/prof.png" /> Find Your
+            Professor </a></li>
+        <li class="tab2"> <a href="#showreview" role="tab" data-toggle="tab"><img src="images/review-list.png" /> Show
+            Reviews </a></li>
+        <li class="tab3"> <a href="#addreview" role="tab" data-toggle="tab"><img src="images/review.png" /> Review
+            Professor</a></li>
+        <li class="tab4"> <a href="#addprof" role="tab" data-toggle="tab"><img src="images/prof.png" /> Add
+            Professor</a></li>
+      </ul>
+
+      <div class="tab-content tabs">
+        <div role="tabpanel" class="tab-pane in active" id="list">
+          <section class="professorlist">
+            <!-- FINISH ME: Task 3 ; make sure to create 6 professors-->
+            <article class="professor_box">
+              <div class = "overall_rating">
+              <div class = "rating_none"></div>
+              </div>
+              <div class = "prof_info">
+              <div class = "name">Best Professor</div>
+              <div class = "affiliate"> Associate Professor</div>
+              <div class = "school">Washington State Univeristy</div>
+              </div>
+              <div class = "prof_button">
+              <button type="button" class="btn btn-success">Select</button>
+              </div>
+            </article>
+          </section>
+        </div>
+
+        <div role="tabpanel" class="tab-pane" id="showreview">
+
+          <section class="reviews">
+            <!-- FINISH ME: Task 4 ; make sure to create 6 reviews-->
+            <article class="review">
+              <div class = "review_row">
+              <div class = "review_rating">
+              <div class = "rating_none"></div>
+            </div>
+              <div class = "review_text">This is review 0 with rating none.This is review 0 with rating none.This is review 0 with rating none.This is review 0 with rating none.</div>
+            </div>
+              <div class = "created_at">Posted at 1:03pm May 22, 2019</div>
+            </article>
+          </section>
+        </div>
+
+        <div role="tabpanel" class="tab-pane" id="addreview">
+          <form id="addReviewForm" method="POST">
+            <h2>Review Your Professor</h2>
+            <!-- FINISH ME: Task 5; add the of the form fields -->
+            <textarea class = "review_input" attribute = "review">Provide Your Feedback...</textarea>
+            <div class = "rating_input_group">
+            <label class = "rating_select">Rating:</label>
+            <select class = "review_rating_input" attribute = "rating">
+              <option value = "5">5 - Excellent</option>
+              <option value = "4">4 - Good</option>
+              <option value = "3">3 - Average</option>
+              <option value = "2">2 - Poor</option>
+              <option value = "1">1 - Terrible</option>
+            </select>
+          </div>
+          <input type="submit" class="submit_review_input btn btn-primary btn-lg" value = "Post Review">
+          <input type="cancel" class="cancel_review btn btn-warning btn-lg" value="Cancel">
+          </form>
+        </div>
+
+        <div role="tabpanel" class="tab-pane" id="addprof">
+          <form id="addProfForm" method="POST">
+            <h2>Add New Professor</h2>
+            <div class="prof_inputs">
+              <label class="labels">Name:</label>
+              <input class="name_input"> </input>
+            </div>
+            <div class="prof_inputs">
+              <label class="labels">Lastname:</label>
+              <input class="lastname_input"> </input>
+            </div>
+            <div class="prof_inputs">
+              <label class="labels"> Title:</label>
+              <select class="title_input">
+                <option value="Assistant Professor">Assistant Professor</option>
+                <option value="Associate Professor">Associate Professor</option>
+                <option value="Professor">Professor</option>
+                <option value="Clinical Assistant Professor">Clinical Assistant Professor</option>
+                <option value="Clinical Associate Professor">Clinical Associate Professor</option>
+                <option value="Clinical Professor">Clinical Professor</option>
+                <option value="Instructor">Instructor</option>
+              </select>
+            </div>
+            <div class="prof_inputs">
+              <label class="labels">School:</label>
+              <select class="school_input">
+                <option value="Washington State University, Pullman">Washington State University, Pullman</option>
+                <option value="Washington State University, Everett">Washington State University, Everett</option>
+              </select>
+            </div>
+            <input type="submit" class="submit_prof_input btn btn-primary btn-lg" value="Create Professor">
+            <input type="cancel" class="cancel_prof btn btn-warning btn-lg" value="Cancel">
+          </form>
+        </div>
+
+      </div>  <!--tab-content-->
+    </div>  <!--tab-->
+  </div> <!--mytab-->
+
+</body>
+
+</html>
